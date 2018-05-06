@@ -119,7 +119,7 @@ nav h1 a {
 	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: center;
-	padding: 10px;
+	padding: 10px 0;
 }
 .filter-options h2 {
   color: white;
