@@ -16,12 +16,19 @@ class DBHelper {
    * Fetch all restaurants.
    */
   static fetchRestaurants(callback) {
+    if(!window.navigator.onLine) {
+      idbKeyval.getAll()
+      .then(restaurants => callback(null, restaurants))
+              .catch(error => callback(error, null));
+    } else {
     fetch(DBHelper.DATABASE_URL)
         .then(response => response.json())
         .then(restaurants => {
+          restaurants.map((restaurant, index) => idbKeyval.set(index, restaurant));
           callback(null, restaurants);
         })
         .catch(error => callback(error, null));
+      }
   }
 
   /**

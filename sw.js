@@ -1,4 +1,4 @@
-var staticCacheName = 'restaurant-app-v2';
+var staticCacheName = 'restaurant-app-v4';
 var contentImgsCache = 'restaurant-content-imgs';
 var allCaches = [staticCacheName, contentImgsCache];
 
@@ -10,9 +10,9 @@ self.addEventListener('install', function(event) {
        '/index.html',
        '/restaurant.html',
        '/css/styles.css',
-       '/data/restaurants.json',
        '/js/main.js',
        '/js/dbhelper.js',
+       '/js/idbhelper.js',
        '/js/restaurant_info.js'
      ]);
    })
