@@ -10,10 +10,15 @@ self.addEventListener('install', function(event) {
        '/index.html',
        '/restaurant.html',
        '/css/styles.css',
+       '/css/style-medium.css',
+       '/css/styles-desktop.css',
        '/js/main.js',
        '/js/dbhelper.js',
        '/js/idbhelper.js',
-       '/js/restaurant_info.js'
+       '/js/restaurant_info.js',
+       '/manifest.json',
+       'js/jqlight.lazyloadxt.min.js',
+       'js/jquery.lazyloadxt.min.js'
      ]);
    })
  );

@@ -1,11 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/style-medium.css" media="(min-width: 974px)">
+  <link rel="stylesheet" href="css/styles-desktop.css" media="(min-width: 1420px)">
+
   <title>Restaurant Reviews</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3367D6"/>
+
+  <style>
+  /* ====================== Restaurant Filtering ====================== */
+  .filter-options {
+    width: 100%;
+    background-color: darkblue;
+    align-items: center;
+  	display: flex;
+  	flex-direction: column;
+  	flex-wrap: wrap;
+  	justify-content: center;
+  	padding: 10px 0;
+  }
+  .filter-options h2 {
+    color: white;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0 20px;
+  }
+  .filter-options select {
+    background-color: white;
+    border: 1px solid #fff;
+    font-family: Arial,sans-serif;
+    font-size: 11pt;
+    height: 35px;
+    letter-spacing: 0;
+    margin: 10px;
+    padding: 0 10px;
+    width: 200px;
+  }
+  </style>
 </head>
 
 <body>
@@ -16,10 +52,10 @@
   </header>
 
   <main id="maincontent">
-    <section id="map-container" aria-role="application">
+    <section id="map-container" role="application">
       <div id="map"></div>
     </section>
-    <section>
+    <section id="content-section">
       <div class="filter-options">
         <h2>Filter Results</h2>
         <select id="neighborhoods-select" tabindex="0" name="neighborhoods" onchange="updateRestaurants()">
@@ -51,6 +87,8 @@
              .then(function() { console.log("Service Worker Registered"); });
   }
   </script>
+  <script src="js/jqlight.lazyloadxt.min.js"></script>
+  <script src="js/jquery.lazyloadxt.min.js"></script>
 </body>
 
 </html>
