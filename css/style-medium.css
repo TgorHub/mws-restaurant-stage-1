@@ -1,0 +1,21 @@
+#restaurants-list li {
+  width: 40%;
+}
+#restaurant-container, #reviews-container {
+  width: 50%;
+  display: block;
+}
+.inside #map-container {
+  height: 93%;
+  right: 0;
+  top: 80px;
+  position: fixed;
+  width: 50%;
+}
+.inside #footer {
+    width: 50vw;
+}
+
+#breadcrumb {
+    width: calc(50% - 80px);
+}

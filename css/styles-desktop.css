@@ -1,0 +1,10 @@
+.filter-options {
+  flex-direction: row;
+}
+#restaurants-list li {
+  width: 270px;
+}
+#restaurant-container, #reviews-container {
+  width: 50%;
+  display: block;
+}
