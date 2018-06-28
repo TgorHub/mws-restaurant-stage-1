@@ -111,12 +111,6 @@ nav h1 a {
     color: #01447e;
     text-decoration: underline;
 }
-/* ====================== Map ====================== */
-#map {
-  height: 400px;
-  width: 100%;
-  background-color: #ccc;
-}
 
 /* ====================== Restaurant Listing ====================== */
 #restaurants-list {
