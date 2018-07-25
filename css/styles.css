@@ -235,7 +235,7 @@ nav h1 a {
 }
 
 #reviews-container, #new-review {
-  padding: 30px 40px 80px;
+  padding: 10px;
 	display: flex;
   flex-direction: column;
   align-items: center;

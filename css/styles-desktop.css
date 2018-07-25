@@ -8,3 +8,7 @@
   width: 50%;
   display: block;
 }
+
+#reviews-container, #new-review {
+  padding: 30px 40px 80px;
+}

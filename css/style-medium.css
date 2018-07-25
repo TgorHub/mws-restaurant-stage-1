@@ -19,3 +19,7 @@
 #breadcrumb {
     width: calc(50% - 80px);
 }
+
+#reviews-container, #new-review {
+  padding: 30px 40px 80px;
+}
