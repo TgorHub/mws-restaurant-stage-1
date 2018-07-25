@@ -4,7 +4,7 @@
 #restaurants-list li {
   width: 270px;
 }
-#restaurant-container, #reviews-container {
+#restaurant-container {
   width: 50%;
   display: block;
 }
