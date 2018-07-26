@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles.css" inline>
+  <link rel="stylesheet" href="css/style-medium.css" media="(min-width: 974px)" inline>
+  <link rel="stylesheet" href="css/styles-desktop.css" media="(min-width: 1420px)" inline>
+
+  <title>Restaurant Reviews</title>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#3367D6"/>
+
+  <style>
+  /* ====================== Restaurant Filtering ====================== */
+  .filter-options {
+    width: 100%;
+    background-color: darkblue;
+    align-items: center;
+  	display: flex;
+  	flex-direction: column;
+  	flex-wrap: wrap;
+  	justify-content: center;
+  	padding: 10px 0;
+  }
+  .filter-options h2 {
+    color: white;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1;
+    margin: 0 20px;
+  }
+  .filter-options select {
+    background-color: white;
+    border: 1px solid #fff;
+    font-family: Arial,sans-serif;
+    font-size: 11pt;
+    height: 35px;
+    letter-spacing: 0;
+    margin: 10px;
+    padding: 0 10px;
+    width: 200px;
+  }
+  /* ====================== Map ====================== */
+  #map {
+    height: 400px;
+    width: 100%;
+    background-color: #ccc;
+  }
+  </style>
+</head>
+
+<body>
+  <div id="alert-box"></div>
+
+  <header>
+    <nav class="header-nav">
+      <h1><a tabindex="0" href="/">Restaurant Reviews</a></h1>
+    </nav>
+  </header>
+
+  <main id="maincontent">
+    <section id="map-container" role="application">
+      <div id="map"></div>
+    </section>
+    <section id="content-section">
+      <div class="filter-options">
+        <h2>Filter Results</h2>
+        <select id="neighborhoods-select" tabindex="0" name="neighborhoods" onchange="updateRestaurants()">
+          <option value="all">All Neighborhoods</option>
+        </select>
+        <select id="cuisines-select" tabindex="0" name="cuisines" onchange="updateRestaurants()">
+          <option value="all">All Cuisines</option>
+        </select>
+      </div>
+      <ul id="restaurants-list"></ul>
+    </section>
+  </main>
+
+  <script type="application/javascript" src="js/idb.js"></script>
+  <script type="application/javascript" charset="utf-8" src="js/dbhelper.js"></script>
+  <script type="application/javascript" charset="utf-8" src="js/main.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap"></script>
+
+
+  <footer id="footer">
+    Copyright (c) 2018 <a tabindex="0" href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  </footer>
+
+  <script>
+  if('serviceWorker' in navigator) {
+    navigator.serviceWorker
+             .register('/sw.js')
+             .then(function() { console.log("Service Worker Registered"); });
+  }
+  </script>
+  <script src="js/jqlight.lazyloadxt.min.js"></script>
+  <script src="js/jquery.lazyloadxt.min.js"></script>
+</body>
+
+</html>

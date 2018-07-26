@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Main CSS file -->
+  <link rel="stylesheet" href="css/styles.css" type="text/css" inline>
+  <link rel="stylesheet" href="css/style-medium.css" media="(min-width: 974px)" inline>
+  <link rel="stylesheet" href="css/styles-desktop.css" media="(min-width: 1420px)" inline>
+  <title>Restaurant Info</title>
+</head>
+
+<body class="inside">
+  <div id="alert-box"></div>
+  <!-- Beginning header -->
+  <header>
+    <!-- Beginning nav -->
+    <nav class="header-nav" aria-label="Header">
+      <h1><a tabindex="0" href="/">Restaurant Reviews</a></h1>
+    </nav>
+    <!-- Beginning breadcrumb -->
+    <nav aria-label="Breadcrumb">
+      <ol id="breadcrumb" >
+        <li><a href="/">Home</a></li>
+      </ol>
+    </nav>
+    <!-- End breadcrumb -->
+    <!-- End nav -->
+  </header>
+  <!-- End header -->
+
+  <!-- Beginning main -->
+  <main id="maincontent">
+    <!-- Beginning map -->
+    <section id="map-container" role="application">
+      <div id="map"></div>
+    </section>
+    <!-- End map -->
+    <!-- Beginning restaurant -->
+    <section id="restaurant-container">
+      <h2 id="restaurant-name"></h2>
+      <button id="favorite-button" type="button">&#9733;</button>
+      <img alt="Restaurant image" id="restaurant-img">
+      <p id="restaurant-cuisine"></p>
+      <p id="restaurant-address"></p>
+      <table id="restaurant-hours"></table>
+
+      <section id="reviews-container">
+        <ul id="reviews-list"></ul>
+      </section>
+      <section id="new-review">
+        <form id="new-review-form">
+          <fieldset>
+            <legend>New Review</legend>
+            <label for="username">Your name</label>
+            <input id="username" placeholder="Your name" required>
+            <fieldset id="stars">
+              <legend>Your rating:</legend>
+              <input id="one-star" name="Rating" type="radio" value="1">
+              <label id="one-star">*</label>
+              <input id="two-star" name="Rating" type="radio" value="2">
+              <label id="two-star">**</label>
+              <input id="three-star" checked name="Rating" type="radio" value="3">
+              <label id="three-star">***</label>
+              <input id="four-star" name="Rating" type="radio" value="4">
+              <label id="four-star">****</label>
+              <input id="five-star" name="Rating" type="radio" value="5">
+              <label id="five-star">*****</label>
+            </fieldset>
+            <label for="user-review">Your review</label><br>
+            <textarea name="comments" id="user-review" placeholder="Description..." required></textarea><br>
+            <button class="submit-button" onclick="addReview()">Add Review</button>
+        </fieldset>
+        </form>
+      </section>
+    </section>
+    <!-- end restaurant -->
+    <!-- Beginning reviews -->
+    <!-- End reviews -->
+  </main>
+  <!-- End main -->
+
+  <!-- Beginning footer -->
+  <footer id="footer">
+    Copyright (c) 2018 <a tabindex="0" href="/"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+  </footer>
+  <!-- End footer -->
+
+  <!-- Beginning scripts -->
+  <!-- Database helpers -->
+  <script type="application/javascript" src="js/idb.js"></script>
+  <script type="text/javascript" src="js/dbhelper.js"></script>
+
+  <!-- Main javascript file -->
+  <script type="text/javascript" src="js/restaurant_info.js"></script>
+  <!-- Google Maps -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?libraries=places&callback=initMap"></script>
+  <!-- End scripts -->
+
+</body>
+
+</html>
